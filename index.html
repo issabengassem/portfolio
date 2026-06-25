@@ -2,28 +2,57 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=yes, maximum-scale=5">
     <title>Issa Bengassem | AI Engineer Portfolio</title>
+    <meta name="description" content="Issa Bengassem is a Data Science and Artificial Intelligence engineering student building data pipelines, machine learning workflows, and intelligent full-stack systems.">
+    <meta name="author" content="Issa Bengassem">
+    <meta name="keywords" content="Issa Bengassem, Data Engineer, AI Engineer, Data Science, Machine Learning, Python, SQL, Morocco">
+    <meta name="theme-color" content="#091413">
+    <meta name="color-scheme" content="dark light">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Issa Bengassem">
+    <meta property="og:title" content="Issa Bengassem | Data & AI Engineer">
+    <meta property="og:description" content="Portfolio of Data Science and Artificial Intelligence engineering work, projects, certifications, and contact details.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="me.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://issabengassem.com">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' fill='%233FA17E'>IB</text></svg>">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="me.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Primary navigation">
         <div class="nav-container">
-            <div class="logo">IB</div>
-            <ul class="nav-menu">
+            <a class="logo" href="#hero" aria-label="Issa Bengassem home">IB</a>
+            <ul class="nav-menu" id="nav-menu">
                 <li><a href="#hero" class="nav-link">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#certificates" class="nav-link">Certificates</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="theme-toggle">
-                <button id="theme-btn" class="theme-btn">
+            <div class="nav-actions">
+                <button id="theme-btn" class="theme-btn" type="button" aria-label="Switch color theme">
                     <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </button>
             </div>
         </div>
@@ -35,27 +64,70 @@
     <!-- Particles Background -->
     <div class="particles-container" id="particles"></div>
 
+    <main id="main">
     <!-- Hero Section -->
-    <section id="hero" class="hero">
+    <section id="hero" class="hero" aria-labelledby="hero-title">
+        <div class="hero-grid-bg" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <h1 class="hero-title">
+                <p class="hero-kicker"><i class="fas fa-database"></i> Data engineering + applied AI</p>
+                <h1 class="hero-title" id="hero-title">
                     <span class="typing-text">Issa Bengassem</span>
                 </h1>
                 <p class="hero-subtitle">Data Science & Artificial Intelligence Engineer</p>
-                <p class="hero-description">I build intelligent systems using data, machine learning, and modern technologies.</p>
+                <p class="hero-description">I build reliable data pipelines, ML-ready datasets, and intelligent systems using data, machine learning, and modern technologies.</p>
+                <div class="hero-stack" aria-label="Core technologies">
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>Machine Learning</span>
+                    <span>Big Data</span>
+                </div>
                 <div class="hero-buttons">
-                    <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
-                        View Projects
-                    </button>
-                    <button class="btn btn-glass" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                        Contact Me
-                    </button>
+                    <a class="btn btn-primary" href="#projects">
+                        <i class="fas fa-layer-group"></i> View Projects
+                    </a>
+                    <a class="btn btn-glass" href="#contact">
+                        <i class="fas fa-paper-plane"></i> Contact Me
+                    </a>
+                    <a class="hero-resume-link" href="cv.pdf" onclick="openCertificateModal('cv.pdf', 'My Curriculum Vitae'); return false;">
+                        <i class="fas fa-file-arrow-down"></i> Open CV
+                    </a>
+                </div>
+                <div class="hero-signals" aria-label="Professional focus areas">
+                    <div class="signal">
+                        <span class="signal-value">Data</span>
+                        <span class="signal-label">Pipelines & modeling</span>
+                    </div>
+                    <div class="signal">
+                        <span class="signal-value">AI</span>
+                        <span class="signal-label">ML workflows</span>
+                    </div>
+                    <div class="signal">
+                        <span class="signal-value">Full-stack</span>
+                        <span class="signal-label">APIs & interfaces</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
                 <div class="profile-image-container">
-                    <img src="C:\Users\INSPIRON 5410\Downloads\Gemini_Generated_Image_r1ymhvr1ymhvr1ym.png" alt="Issa Bengassem" class="profile-image">
+                    <picture>
+                        <source srcset="me.png" type="image/png">
+                        <img src="me.png" alt="Portrait of Issa Bengassem" class="profile-image" width="1844" height="2304" decoding="async" fetchpriority="high">
+                    </picture>
+                    <div class="profile-ring" aria-hidden="true"></div>
+                    <div class="hero-panel hero-panel-top" aria-hidden="true">
+                        <i class="fas fa-brain"></i>
+                        <span>ML Workflows</span>
+                    </div>
+                    <div class="hero-panel hero-panel-bottom" aria-hidden="true">
+                        <i class="fas fa-code-branch"></i>
+                        <span>Data Systems</span>
+                    </div>
+                    <div class="hero-orbit" aria-hidden="true">
+                        <span>ETL</span>
+                        <span>SQL</span>
+                        <span>AI</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -81,87 +153,71 @@
                     <h3><i class="fas fa-code"></i> Programming</h3>
                     <div class="skill-items">
                         <span class="skill-badge">Python</span>
-                        <span class="skill-badge">C</span>
+                        <span class="skill-badge">SQL</span>
                         <span class="skill-badge">Java</span>
-                        <span class="skill-badge">R</span>
-                        <span class="skill-badge">MATLAB</span>
                         <span class="skill-badge">JavaScript</span>
                         <span class="skill-badge">HTML/CSS</span>
-                        <span class="skill-badge">SQL</span>
                     </div>
                 </div>
 
-                <!-- AI & Data -->
+                <!-- AI/ML Libraries -->
                 <div class="skill-category glass-card">
-                    <h3><i class="fas fa-brain"></i> AI & Data</h3>
-                    <div class="skill-items">
-                        <span class="skill-badge">Machine Learning</span>
-                        <span class="skill-badge">Data Analysis</span>
-                        <span class="skill-badge">Big Data</span>
-                        <span class="skill-badge">Statistics</span>
-                        <span class="skill-badge">Neural Networks</span>
-                        <span class="skill-badge">NLP</span>
-                    </div>
-                </div>
-
-                <!-- Tools -->
-                <div class="skill-category glass-card">
-                    <h3><i class="fas fa-tools"></i> Tools & Libraries</h3>
+                    <h3><i class="fas fa-brain"></i> AI/ML Libraries</h3>
                     <div class="skill-items">
                         <span class="skill-badge">NumPy</span>
                         <span class="skill-badge">Pandas</span>
-                        <span class="skill-badge">Scikit-learn</span>
-                        <span class="skill-badge">TensorFlow</span>
+                        <span class="skill-badge">Scikit-Learn</span>
+                        <span class="skill-badge">Matplotlib</span>
+                        <span class="skill-badge">PyTorch</span>
+                        <span class="skill-badge">Streamlit</span>
+                    </div>
+                </div>
+
+                <!-- Web & APIs -->
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-server"></i> Web & APIs</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">Flask</span>
+                        <span class="skill-badge">FastAPI</span>
+                        <span class="skill-badge">RESTful APIs</span>
+                    </div>
+                </div>
+
+                <!-- Data & BI -->
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-database"></i> Data & BI</h3>
+                    <div class="skill-items">
                         <span class="skill-badge">Power BI</span>
+                        <span class="skill-badge">Machine Learning</span>
+                        <span class="skill-badge">Big Data</span>
+                        <span class="skill-badge">Statistics</span>
+                    </div>
+                </div>
+
+                <!-- Tools & Platforms -->
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+                    <div class="skill-items">
                         <span class="skill-badge">Git</span>
+                        <span class="skill-badge">GitHub</span>
                         <span class="skill-badge">Linux</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section id="certificates" class="section certificates-section">
-        <div class="container">
-            <h2 class="section-title">Certifications & Achievements</h2>
-            <div class="certificates-grid">
-                <!-- Certificate 1 -->
-                <div class="certificate-card glass-card">
-                    <div class="certificate-image">
-                        <embed src="C:\Users\INSPIRON 5410\OneDrive\Images\Documents\Certificate_injaz.pdf" type="application/pdf" />
-                    </div>
-                    <div class="certificate-info">
-                        <h3>JA Steer Your Career</h3>
-                        <p class="certificate-issuer">INJAZ Al-Maghrib</p>
-                        <p class="certificate-date">May 10, 2024</p>
-                        <p class="certificate-desc">Career development and professional guidance program</p>
+                        <span class="skill-badge">n8n</span>
+                        <span class="skill-badge">Photoshop</span>
+                        <span class="skill-badge">Graphic Design</span>
                     </div>
                 </div>
 
-                <!-- Certificate 2 -->
-                <div class="certificate-card glass-card">
-                    <div class="certificate-image">
-                        <embed src="C:\Users\INSPIRON 5410\OneDrive\Images\Documents\certificate_py_interm.pdf" type="application/pdf" />
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Intermediate Python</h3>
-                        <p class="certificate-issuer">DataCamp</p>
-                        <p class="certificate-date">March 17, 2026</p>
-                        <p class="certificate-desc">Advanced Python programming skills and techniques</p>
-                    </div>
-                </div>
-
-                <!-- Certificate 3 -->
-                <div class="certificate-card glass-card">
-                    <div class="certificate-image">
-                        <embed src="C:\Users\INSPIRON 5410\OneDrive\Images\Documents\Certificate _Maharat_Min_Google.pdf" type="application/pdf" />
-                    </div>
-                    <div class="certificate-info">
-                        <h3>Digital Marketing Basics</h3>
-                        <p class="certificate-issuer">Google & INJAZ</p>
-                        <p class="certificate-date">May 10, 2024</p>
-                        <p class="certificate-desc">Fundamentals of internet marketing and digital strategy</p>
+                <!-- Emerging AI Tech -->
+                <div class="skill-category glass-card">
+                    <h3><i class="fas fa-robot"></i> Emerging AI Tech</h3>
+                    <div class="skill-items">
+                        <span class="skill-badge">LangChain</span>
+                        <span class="skill-badge">LangGraph</span>
+                        <span class="skill-badge">CrewAI</span>
+                        <span class="skill-badge">OpenAI API</span>
+                        <span class="skill-badge">Anthropic API</span>
+                        <span class="skill-badge">Vector DBs</span>
+                        <span class="skill-badge">RAG</span>
                     </div>
                 </div>
             </div>
@@ -177,24 +233,33 @@
                 <div class="project-card glass-card">
                     <div class="project-image project-image-1">
                         <div class="project-icon">
-                            <i class="fas fa-calendar-check"></i>
+                            <i class="fas fa-futbol"></i>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>ReserveCut</h3>
-                        <p>Full-stack reservation management system with REST API and modern UI.</p>
+                        <div class="project-heading">
+                            <div>
+                                <p class="project-category">Machine Learning</p>
+                                <h3>World Cup 2026 Predictor & Tournament Simulator</h3>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <p>Built and deployed an ML dashboard to predict match outcomes and simulate group and knockout stages.</p>
                         <div class="project-features">
-                            <span class="feature">Scheduling System</span>
-                            <span class="feature">Notifications</span>
-                            <span class="feature">DB Modeling</span>
+                            <span class="feature">Match Outcome Prediction</span>
+                            <span class="feature">Tournament Simulation</span>
+                            <span class="feature">Interactive ML Dashboard</span>
                         </div>
                         <div class="project-tech">
-                            <span class="tech-badge">Java</span>
-                            <span class="tech-badge">JavaScript</span>
-                            <span class="tech-badge">SQL</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Pandas</span>
+                            <span class="tech-badge">NumPy</span>
+                            <span class="tech-badge">Scikit-Learn</span>
+                            <span class="tech-badge">Streamlit</span>
+                            <span class="tech-badge">Git</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://reservecut.me" target="_blank" class="project-link">
+                            <a href="https://world-cup2026.streamlit.app/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Visit Site
                             </a>
                         </div>
@@ -205,27 +270,231 @@
                 <div class="project-card glass-card">
                     <div class="project-image project-image-2">
                         <div class="project-icon">
-                            <i class="fas fa-palette"></i>
+                            <i class="fas fa-calendar-check"></i>
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Tattoo Marrakech Ink</h3>
-                        <p>Professional tattoo studio website with service showcase, booking system, and portfolio gallery.</p>
+                        <div class="project-heading">
+                            <div>
+                                <p class="project-category">Full-Stack Development</p>
+                                <h3>ReserveCut</h3>
+                                <p class="project-subtitle">Barbershop Reservation Platform</p>
+                            </div>
+                            <span class="project-year">2026</span>
+                        </div>
+                        <p>Developed a full-stack booking platform with client scheduling, relational database design, and REST API integration.</p>
                         <div class="project-features">
-                            <span class="feature">Service Showcase</span>
-                            <span class="feature">Portfolio Gallery</span>
-                            <span class="feature">Booking System</span>
+                            <span class="feature">Client Scheduling</span>
+                            <span class="feature">Relational Database Design</span>
+                            <span class="feature">REST API Integration</span>
                         </div>
                         <div class="project-tech">
-                            <span class="tech-badge">Web Design</span>
-                            <span class="tech-badge">Frontend</span>
-                            <span class="tech-badge">UI/UX</span>
+                            <span class="tech-badge">Java</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">MySQL</span>
+                            <span class="tech-badge">REST API</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://tattomarrakechink.store/" target="_blank" class="project-link">
+                            <a href="https://reservecut.me/" target="_blank" rel="noopener noreferrer" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Visit Site
                             </a>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="project-card glass-card">
+                    <div class="project-image project-image-3">
+                        <div class="project-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-heading">
+                            <div>
+                                <p class="project-category">Web & Digital</p>
+                                <h3>Tattoo Marrakech Ink</h3>
+                                <p class="project-subtitle">E-commerce Website</p>
+                            </div>
+                            <span class="project-year">2025</span>
+                        </div>
+                        <p>Created a responsive e-commerce website with product catalog, booking forms, branding, SEO, and social media management.</p>
+                        <div class="project-features">
+                            <span class="feature">Product Catalog</span>
+                            <span class="feature">Booking Forms</span>
+                            <span class="feature">SEO and Branding</span>
+                        </div>
+                        <div class="project-tech">
+                            <span class="tech-badge">Web Development</span>
+                            <span class="tech-badge">Photoshop</span>
+                            <span class="tech-badge">SEO</span>
+                            <span class="tech-badge">Social Media Management</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://tattomarrakechink.store/" target="_blank" rel="noopener noreferrer" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Visit Site
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates-section">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="certificates-grid">
+                <!-- Certificate 1 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="certificate-badge">Career Development</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>JA Steer Your Career</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> INJAZ Al-Maghrib</p>
+                        <p class="certificate-date"><i class="fas fa-calendar"></i> May 10, 2024</p>
+                        <p class="certificate-desc">Career development and professional guidance program</p>
+                        <button type="button" onclick="openCertificateModal('Certificate_injaz.pdf', 'JA Steer Your Career')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 2 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <div class="certificate-badge">Programming</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Intermediate Python</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> DataCamp</p>
+                        <p class="certificate-date"><i class="fas fa-calendar"></i> March 17, 2026</p>
+                        <p class="certificate-desc">Advanced Python programming skills and techniques</p>
+                        <button type="button" onclick="openCertificateModal('certificate_py_interm.pdf', 'Intermediate Python')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <div class="certificate-badge">Machine Learning</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Machine Learning with Scikit-learn</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> DataCamp</p>
+                        <p class="certificate-date"><i class="fas fa-file-circle-check"></i> Credential available</p>
+                        <p class="certificate-desc">Practical machine learning workflows using scikit-learn models and evaluation techniques</p>
+                        <button type="button" onclick="openCertificateModal('certificate_ML_with_sickitlearn.pdf', 'Machine Learning with Scikit-learn')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-table"></i>
+                        </div>
+                        <div class="certificate-badge">Data Analysis</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Pandas</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> Kaggle</p>
+                        <p class="certificate-date"><i class="fas fa-file-circle-check"></i> Credential available</p>
+                        <p class="certificate-desc">Hands-on Pandas practice for cleaning, transforming, and analyzing tabular datasets</p>
+                        <button type="button" onclick="openCertificateModal('kaggle - Pandas.png', 'Pandas')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 5 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="certificate-badge">Marketing</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Digital Marketing Basics</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> Google & INJAZ</p>
+                        <p class="certificate-date"><i class="fas fa-calendar"></i> May 10, 2024</p>
+                        <p class="certificate-desc">Fundamentals of internet marketing and digital strategy</p>
+                        <button type="button" onclick="openCertificateModal('Certificate _Maharat_Min_Google.pdf', 'Digital Marketing Basics')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 6 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="certificate-badge">Programming</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Introduction to Python</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> Sololearn</p>
+                        <p class="certificate-date"><i class="fas fa-file-circle-check"></i> Credential available</p>
+                        <p class="certificate-desc">Core Python programming foundations for data and automation workflows</p>
+                        <button type="button" onclick="openCertificateModal('solo_learn_intro_to_py.pdf', 'Introduction to Python')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 7 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fab fa-python"></i>
+                        </div>
+                        <div class="certificate-badge">Programming</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Python Intermediate</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> Sololearn</p>
+                        <p class="certificate-date"><i class="fas fa-file-circle-check"></i> Credential available</p>
+                        <p class="certificate-desc">Intermediate Python practice supporting reusable code, data handling, and problem solving</p>
+                        <button type="button" onclick="openCertificateModal('solo_learn_py_interm.pdf', 'Python Intermediate')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Certificate 8 -->
+                <div class="certificate-card glass-card">
+                    <div class="certificate-header">
+                        <div class="certificate-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <div class="certificate-badge">Data</div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>SQL Intermediate</h3>
+                        <p class="certificate-issuer"><i class="fas fa-institution"></i> Sololearn</p>
+                        <p class="certificate-date"><i class="fas fa-file-circle-check"></i> Credential available</p>
+                        <p class="certificate-desc">Relational querying, joins, aggregation, and SQL skills for data engineering tasks</p>
+                        <button type="button" onclick="openCertificateModal('solo_learn_sql_interm.pdf', 'SQL Intermediate')" class="certificate-download" title="View Certificate">
+                            <i class="fas fa-eye"></i> View Certificate
+                        </button>
                     </div>
                 </div>
             </div>
@@ -299,6 +568,27 @@
         </div>
     </section>
 
+    <!-- CV Section -->
+    <section id="cv" class="section cv-section">
+        <div class="container">
+            <h2 class="section-title">Download My CV</h2>
+            <div class="cv-card glass-card">
+                <div class="cv-content">
+                    <div class="cv-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <div class="cv-text">
+                        <h3>My Curriculum Vitae</h3>
+                        <p>Download my full resume with detailed information about my education, experience, and skills.</p>
+                    </div>
+                    <a href="cv.pdf" onclick="openCertificateModal('cv.pdf', 'My Curriculum Vitae'); return false;" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="section contact-section">
         <div class="container">
@@ -309,45 +599,98 @@
                     <p>I'm always open to new opportunities and interesting projects. Feel free to reach out!</p>
                     
                     <div class="contact-methods">
-                        <a href="mailto:issa.bengassem@edu.uiz.ac.ma" class="contact-method">
+                        <a href="mailto:issa.bengassem@edu.uiz.ac.ma" class="contact-method" title="Send Email">
                             <i class="fas fa-envelope"></i>
-                            <span>issa.bengassem@edu.uiz.ac.ma</span>
+                            <span>Email</span>
                         </a>
-                        <a href="https://github.com/issabengassem" target="_blank" class="contact-method">
+                        <a href="https://wa.me/212632151409?text=Hi%20Issa%2C%20I%20would%20like%20to%20connect%20with%20you" target="_blank" rel="noopener noreferrer" class="contact-method" title="Send WhatsApp Message">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>WhatsApp</span>
+                        </a>
+                        <a href="https://github.com/issabengassem" target="_blank" rel="noopener noreferrer" class="contact-method" title="Visit GitHub">
                             <i class="fab fa-github"></i>
                             <span>GitHub</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/issa-bengassem-0b6713334" target="_blank" class="contact-method">
+                        <a href="https://www.linkedin.com/in/issa-bengassem-0b6713334" target="_blank" rel="noopener noreferrer" class="contact-method" title="Visit LinkedIn">
                             <i class="fab fa-linkedin"></i>
                             <span>LinkedIn</span>
                         </a>
                     </div>
 
-                    <form class="contact-form glass-card" id="contact-form">
+                    <form class="contact-form" id="contact-form" action="javascript:void(0)">
                         <div class="form-group">
-                            <input type="text" id="name" placeholder="Your Name" required>
+                            <label for="name">Your Name *</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" autocomplete="name" required aria-required="true" minlength="2">
                         </div>
                         <div class="form-group">
-                            <input type="email" id="email" placeholder="Your Email" required>
+                            <label for="email">Your Email *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email address" autocomplete="email" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" placeholder="Type your message here..." rows="5" required aria-required="true" minlength="10"></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Issa Bengassem. All rights reserved.</p>
+            <p>&copy; <span id="current-year">2026</span> Issa Bengassem. All rights reserved.</p>
             <p>Crafted with <i class="fas fa-heart"></i> using modern web technologies.</p>
         </div>
     </footer>
 
+    <!-- Certificate Modal -->
+    <div id="certificateModal" class="certificate-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2 id="modalTitle">Certificate</h2>
+                <button type="button" class="modal-close" aria-label="Close modal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <embed id="certificatePdf" src="" type="application/pdf" width="100%" height="600px" />
+                <img id="certificateImage" class="certificate-image" src="" alt="" hidden>
+            </div>
+            <div class="modal-footer">
+                <a id="certificateDownload" href="#" download class="btn btn-primary">
+                    <i class="fas fa-download"></i> <span>Download File</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Issa Bengassem",
+            "jobTitle": "Data Science and Artificial Intelligence Engineer",
+            "email": "issa.bengassem@edu.uiz.ac.ma",
+            "image": "me.png",
+            "sameAs": [
+                "https://github.com/issabengassem",
+                "https://www.linkedin.com/in/issa-bengassem-0b6713334"
+            ],
+            "knowsAbout": [
+                "Data Engineering",
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Python",
+                "SQL"
+            ]
+        }
+    </script>
     <script src="script.js"></script>
 </body>
 </html>

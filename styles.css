@@ -18,17 +18,17 @@
     --color-4: #EBF4F6;
     --text-muted: rgba(235, 244, 246, 0.72);
     --text-soft: rgba(235, 244, 246, 0.86);
-
+    
     /* Glass Effect */
     --glass-bg: rgba(12, 58, 49, 0.48);
     --glass-blur: 18px;
     --glass-border: rgba(184, 243, 216, 0.18);
-
+    
     /* Fonts */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     --font-secondary: 'Poppins', sans-serif;
     --font-code: 'JetBrains Mono', monospace;
-
+    
     /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
@@ -36,23 +36,23 @@
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-xxl: 4rem;
-
+    
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 8px;
     --radius-lg: 12px;
-
+    
     /* Transitions */
     --trans-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --trans-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     --trans-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
-
+    
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
     --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
     --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
     --glow: 0 18px 50px rgba(5, 10, 10, 0.24), 0 0 28px rgba(119, 216, 247, 0.08);
-
+    
     /* Mobile-First Responsive Variables */
     --max-content-width: 1200px;
     --touch-target-min: 44px;
@@ -808,7 +808,7 @@ picture {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
 }
 
@@ -843,6 +843,10 @@ picture {
 
 .project-image-3 {
     background: linear-gradient(135deg, rgba(242, 193, 78, 0.24) 0%, rgba(64, 138, 113, 0.28) 100%);
+}
+
+.project-image-4 {
+    background: linear-gradient(135deg, rgba(119, 216, 247, 0.3) 0%, rgba(64, 138, 113, 0.38) 100%);
 }
 
 .project-icon {
@@ -966,6 +970,11 @@ picture {
     display: flex;
     gap: 1rem;
     margin-top: auto;
+}
+
+.project-links-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .project-link {
@@ -1306,16 +1315,20 @@ picture {
         text-align: center;
         gap: 1.5rem;
     }
-
+    
     .cv-icon {
         width: 60px;
         height: 60px;
         font-size: 2rem;
     }
-
+    
     .cv-card .btn {
         width: 100%;
         justify-content: center;
+    }
+
+    .project-links-3 {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1551,32 +1564,32 @@ picture {
     .certificate-modal {
         padding: 1rem;
     }
-
+    
     .modal-content {
         max-height: 95vh;
     }
-
+    
     .modal-header {
         flex-direction: column;
         align-items: flex-start;
         gap: 1rem;
     }
-
+    
     .modal-close {
         position: absolute;
         top: 1rem;
         right: 1rem;
     }
-
+    
     .modal-body {
         min-height: 300px;
     }
-
+    
     .modal-body embed,
     .certificate-image {
         height: 400px !important;
     }
-
+    
     .modal-footer {
         justify-content: center;
     }
@@ -2895,13 +2908,13 @@ picture {
     button {
         -webkit-user-select: none;
     }
-
+    
     .navbar {
         padding-left: calc(0.85rem + env(safe-area-inset-left));
         padding-right: calc(0.85rem + env(safe-area-inset-right));
         padding-top: calc(0.85rem + env(safe-area-inset-top));
     }
-
+    
     .footer {
         padding-bottom: calc(2rem + env(safe-area-inset-bottom));
     }
